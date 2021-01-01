@@ -1,9 +1,11 @@
 import React from "react";
 
-export function Container({content}) {
+function Container({content}) {
     return (
         <div className="container">
             {content}
         </div>
     )
 }
+
+export default Container;

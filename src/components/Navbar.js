@@ -1,7 +1,7 @@
 import React from "react";
 
-export function Navbar() {
-    <nav className="navbar navbar-dark bg-dark">
-        Employee Directory
-    </nav>
+function Navbar() {
+  return <nav className="navbar navbar-dark bg-dark justify-content-center">Employee Directory</nav>;
 }
+
+export default Navbar;

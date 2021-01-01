@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Table({ content }) {
+function Table({ content }) {
   return (
     <table class="table table-hover">
       <thead>
@@ -15,3 +15,5 @@ export function Table({ content }) {
     </table>
   );
 }
+
+export default Table;

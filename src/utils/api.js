@@ -5,8 +5,6 @@ const API_URL = "https://randomuser.me/api/?results=15";
 
 export default {
   search: () => {
-    return axios.get(API_URL).then((res) => {
-      return res;
-    });
+    return axios.get(API_URL);
   },
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-export function TableItem(props) {
+function TableItem(props) {
     return (
         <tr class="table-dark">
           <th scope="row">{props.name}</th>
@@ -10,3 +10,5 @@ export function TableItem(props) {
         </tr>
     )
 }
+
+export default TableItem;
