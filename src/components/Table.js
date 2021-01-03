@@ -1,6 +1,6 @@
 import React from "react";
 
-function Table({ content }) {
+function Table({ children }) {
   return (
     <table class="table table-hover">
       <thead>
@@ -11,7 +11,7 @@ function Table({ content }) {
           <th scope="col">Email</th>
         </tr>
       </thead>
-      <tbody>{content}</tbody>
+      <tbody>{children}</tbody>
     </table>
   );
 }
