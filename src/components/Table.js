@@ -2,7 +2,7 @@ import React from "react";
 
 function Table({ children }) {
   return (
-    <table className="table table-hover justify-content-center">
+    <table className="table table-hover">
       <thead>
         <tr>
           <th scope="col">Name</th>

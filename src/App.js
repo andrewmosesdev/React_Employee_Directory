@@ -14,17 +14,15 @@ class App extends Component {
 
   componentDidMount() {
     API.fetchEmployees()
-      .then((res) => {
-        console.log(res.data);
-        this.setState({ results: res.data.results });
-      })
-      .catch((err) => console.log(err));
+      .then(res => this.setState({ results: res.data.results }))
+      .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div className="App">
-        <Navbar></Navbar>
+        <Navbar>
+        </Navbar>
         <Container>
           <Table>
             {this.state.results.map((result, i) => (
