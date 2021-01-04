@@ -10,13 +10,48 @@ export default function App() {
   // set initial states to empty string/array (sub for componentOnMount)
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState(true);
 
-  // API hook
+  // API hook sets results on mount
   useEffect(() => {
     API.fetchEmployees()
       .then((res) => setResults(res.data.results))
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    if (sort) {
+      ascendingSort("first", results);
+    } else {
+      descendingSort("first", results);
+    }
+    console.log(sort);
+    // eslint-disable-next-line
+  }, [sort]);
+
+  const ascendingSort = (prop, arr) => {
+    arr.sort((a, b) => {
+      if (a.name[prop] < b.name[prop]) {
+        return -1;
+      } else if (a.name[prop] > b.name[prop]) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  };
+
+  const descendingSort = (prop, arr) => {
+    arr.sort((a, b) => {
+      if (a.name[prop] < b.name[prop]) {
+        return 1;
+      } else if (a.name[prop] > b.name[prop]) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+  };
 
   return (
     <div className="App">
@@ -42,7 +77,7 @@ export default function App() {
         </div>
 
         <div className="row">
-          <Table>
+          <Table sort={sort} setSort={setSort}>
             {/* if search length < 1, map through results and create table items for every result  */}
             {search.length < 1
               ? results.map((result, i) => (
@@ -55,8 +90,8 @@ export default function App() {
                     picture={result.picture.medium}
                   ></TableItem>
                 ))
-              : 
-              // else map through results and return those results that match search
+              : // else map through results and return those results that match search
+                // eslint-disable-next-line
                 results.map((result, i) => {
                   if (
                     result.name.first
