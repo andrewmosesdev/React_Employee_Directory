@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "//andrewmosesdrive.github.io/r_e_d",
+  "homepage": "https://andrewmosesdrive.github.io/React_Employee_Directory",
   "eslintConfig": {
     "extends": [
       "react-app",
