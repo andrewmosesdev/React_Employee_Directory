@@ -56,7 +56,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="row">
-        <Navbar></Navbar>
+        <Navbar className="navbar"></Navbar>
       </div>
       <Container className="container">
         <div className="row">
