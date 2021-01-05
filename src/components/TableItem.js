@@ -2,7 +2,7 @@ import React from "react";
 
 function TableItem(props) {
     return (
-        <tr className="table-dark">
+        <tr className="table-item">
           <th scope="row">{props.name}</th>
           <td>{props.phone}</td>
           <td>{props.email}</td>

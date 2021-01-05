@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import Container from "./components/Container";
 import Navbar from "./components/Navbar";
 import Table from "./components/Table";
 import TableItem from "./components/TableItem";
 import API from "./utils/API";
+import "./App.css";
 
 export default function App() {
   // set initial states to empty string/array (sub for componentOnMount)
@@ -55,11 +55,13 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="row">
-        <Navbar className="navbar"></Navbar>
+      
+      <Container className="container-fluid">
+      <div className="nav-row">
+        <Navbar></Navbar>
       </div>
-      <Container className="container">
-        <div className="row">
+      <div className="filter-row">
+        <div className="filter-col">
           <form>
             <label>
               Filter by Name:
@@ -75,13 +77,17 @@ export default function App() {
             </label>
           </form>
         </div>
+      </div>
 
-        <div className="row">
-          <Table sort={sort} setSort={setSort}>
+      <div className="table-row">
+        <div className="table-col">
+          <Table sort={sort} setSort={setSort} className="table">
             {/* if search length < 1, map through results and create table items for every result  */}
             {search.length < 1
               ? results.map((result, i) => (
                   <TableItem
+                  
+                    className="table-item"
                     number={i}
                     key={result.login.uuid}
                     name={result.name.first + " " + result.name.last}
@@ -100,6 +106,7 @@ export default function App() {
                   ) {
                     return (
                       <TableItem
+                        className="table-item"
                         number={i}
                         key={result.login.uuid}
                         name={result.name.first + " " + result.name.last}
@@ -112,6 +119,7 @@ export default function App() {
                 })}
           </Table>
         </div>
+      </div>
       </Container>
     </div>
   );

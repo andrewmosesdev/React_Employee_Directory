@@ -2,7 +2,7 @@ import React from "react";
 
 function Table(props) {
   return (
-    <table className="table table-hover">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">
@@ -13,7 +13,7 @@ function Table(props) {
                 onClick={() => {
                   props.setSort(!props.sort);
                 }}
-                height="2rem"
+                height="1rem"
                 width="2rem"
                 fill="none"
                 stroke="currentColor"
@@ -29,9 +29,9 @@ function Table(props) {
               </svg>
             </span>
           </th>
-          <th scope="col">Phone</th>
-          <th scope="col">Email</th>
-          <th scope="col">Photo</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email Address</th>
+          <th scope="col">Employee Photo</th>
         </tr>
       </thead>
       <tbody>{props.children}</tbody>
