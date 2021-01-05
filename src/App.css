@@ -10,6 +10,7 @@ body {
     margin-top: 20px;
     padding: 10px;    
     width: 100%;
+    color: white;
 }
 
 .navbar {
@@ -25,6 +26,7 @@ body {
 }
 
 .table-item {
+    color: white;
     margin-bottom: 10px;
     font-size: 1.2rem;
 }

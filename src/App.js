@@ -86,7 +86,7 @@ export default function App() {
             {search.length < 1
               ? results.map((result, i) => (
                   <TableItem
-                  
+                    style={{color: "white"}}
                     className="table-item"
                     number={i}
                     key={result.login.uuid}
